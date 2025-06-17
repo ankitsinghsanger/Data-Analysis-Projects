@@ -1,0 +1,15 @@
+Calculated Field,,
+Solve Order,Field,Formula
+,,
+Calculated Item,,
+Solve Order,Item,Formula
+1,Cars,=Car +'Taxi/Private hire car'
+2,Bus,='Minibus (8 - 16 passenger seats)'+'Bus or coach (17 or more pass seats)'
+3,Van,='Goods 7.5 tonnes mgw and over'+'Goods over 3.5t. and under 7.5t'
+,,
+,,
+Note:,"When a cell is updated by more than one formula,",
+,the value is set by the formula with the last solve order.,
+,,
+,"To change the solve order for multiple calculated items or fields,",
+,"on the Options tab, in the Calculations group, click Fields, Items, & Sets, and then click Solve Order.",
