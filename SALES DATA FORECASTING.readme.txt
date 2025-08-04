@@ -1,0 +1,71 @@
+
+ FMCG Revenue Forecasting
+
+This repository contains a data analytics project focused on revenue forecasting for Fast-Moving Consumer Goods (FMCG) companies. The project uses historical sales data to build predictive models that help estimate future revenue trends.
+
+ Dataset
+
+The dataset used (`fmcg_sales_data.csv`) includes historical FMCG sales across different products, regions, and time periods. Key features include:
+
+- Date – Sales date (monthly or weekly)
+- Product_ID – Unique identifier for each product
+- Product_Category – Category or type of product (e.g., beverages, snacks)
+- Region – Sales region or geography
+- Units_Sold – Quantity of product sold
+- Unit_Price – Price per unit
+- Revenue` – Total sales revenue (`Units_Sold * Unit_Price`)
+
+> Note: The data is preprocessed to handle missing values, duplicates, and date formatting issues before model training.
+
+ Objective
+
+The goal of this project is to forecast future revenue using time series forecasting and regression-based machine learning models.
+
+ Technologies Used
+
+- Python 
+- Pandas, NumPy for data manipulation
+- Matplotlib, Seaborn for visualization
+- Scikit-learn for modeling
+- Prophet / ARIMA for time series analysis (optional)
+- Jupyter Notebooks
+
+ Project Structure
+
+
+
+FMCG-Revenue-Forecasting/
+├── data/
+│   └── fmcg\_sales\_data.csv
+├── notebooks/
+│   ├── 01\_data\_cleaning.ipynb
+│   ├── 02\_eda.ipynb
+│   ├── 03\_feature\_engineering.ipynb
+│   ├── 04\_model\_training.ipynb
+│   └── 05\_forecasting.ipynb
+├── outputs/
+│   ├── forecasts.csv
+│   └── performance\_metrics.json
+├── README.md
+└── requirements.txt
+
+
+
+ Key Steps
+
+1. Data Cleaning – Handle nulls, incorrect data types, and remove duplicates
+2. Exploratory Data Analysis (EDA) – Analyze sales trends, seasonality, product/category performance
+3. Feature Engineering- Create lag features, rolling averages, date parts
+4. Modeling – Use regression or time series models to forecast revenue
+5. Evaluation – Assess performance using MAE, RMSE, MAPE
+6. Visualization – Plot forecast vs actual, top-performing products, etc.
+
+Example Visualizations
+
+- Monthly Revenue Trends
+- Regional Revenue Distribution
+- Top 10 Products by Sales
+- Forecast vs Actual Revenue
+
+
+
