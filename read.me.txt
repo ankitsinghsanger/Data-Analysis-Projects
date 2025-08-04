@@ -1,0 +1,53 @@
+This dataset contains customer information for a segmentation analysis using K-Means clustering. It includes spending habits, purchase frequency, and average order value.
+
+Dataset Description
+Column Name	Description
+CustomerID	Unique identifier for each customer
+AnnualSpending	Total amount spent by the customer annually (in currency)
+PurchaseFrequency	Number of purchases made by the customer per year
+AvgOrderValue	Average value per purchase made by the customer
+
+Objective
+The goal is to perform customer segmentation using K-Means clustering. This helps in identifying distinct groups of customers for targeted marketing strategies.
+
+Steps to Run Clustering
+
+python
+import pandas as pd
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Step 1: Load Data
+df = pd.read_csv("customer_data.csv")
+
+# Step 2: Select features
+X = df[['AnnualSpending', 'PurchaseFrequency', 'AvgOrderValue']]
+
+# Step 3: Apply KMeans Clustering
+kmeans = KMeans(n_clusters=2, random_state=42)
+kmeans.fit(X)
+df['Cluster'] = kmeans.labels_
+
+# Step 4: Visualize Results in 3D
+fig = plt.figure(figsize=(10, 6))
+ax = fig.add_subplot(111, projection='3d')
+scatter = ax.scatter(df['AnnualSpending'], df['PurchaseFrequency'], df['AvgOrderValue'],
+                     c=df['Cluster'], cmap='viridis', s=100)
+ax.set_xlabel('Annual Spending')
+ax.set_ylabel('Purchase Frequency')
+ax.set_zlabel('Avg Order Value')
+ax.set_title('Customer Clustering (K-Means)')
+plt.colorbar(scatter)
+plt.show()
+Insights You Can Extract
+High-value customers with high spending and frequent purchases
+
+Low-engagement customers with fewer purchases and lower spending
+
+Outliers or special segments (e.g., low frequency but high order value)
+
+Output
+Cluster: The assigned cluster label for each customer
+
+A scatter plot visualizing customer segments
